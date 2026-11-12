@@ -537,7 +537,7 @@ define(function (require, exports, module) {
             script += "\nwindow._LD=(" + RemoteFunctions +
                 "(" + JSON.stringify(LiveDevMultiBrowser.getConfig()) + "))";
         }
-        script += "\n" + ResizeOverlayScript;
+        script += "\n;" + ResizeOverlayScript;
         return "\n" + script + "\n";
     }
 
