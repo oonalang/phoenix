@@ -44,7 +44,7 @@
     }
 
     function readSelection() {
-        if (!window._LD || window._LD.getMode() !== "edit") {
+        if (!window._LD || typeof window._LD.getMode !== "function" || window._LD.getMode() !== "edit") {
             return null;
         }
         const element = window.__current_ph_lp_selected;
@@ -172,6 +172,9 @@
             return;
         }
         saving = true;
+        if (window._LD && typeof window._LD.suppressDOMEditDismissal === "function") {
+            window._LD.suppressDOMEditDismissal(1400);
+        }
         comm.execPhoenixFn("PH_RESIZE_SELECTED_ELEMENT", {
             tagId: session.tagId,
             width: session.width,
