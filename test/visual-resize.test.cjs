@@ -45,3 +45,13 @@ test("rejects non-tag input and dimensions outside bounds", function () {
         utils.resizeOpeningTag("<div>", 30, Infinity);
     });
 });
+
+test("changes only width for horizontal dragging", function () {
+    assert.equal(utils.resizeOpeningTag('<div style="height: auto; color: red">', 120, null),
+        '<div style="height: auto; color: red; width: 120px">');
+});
+
+test("changes only height for vertical dragging", function () {
+    assert.equal(utils.resizeOpeningTag('<div class="x">', null, 40),
+        '<div class="x" style="height: 40px">');
+});

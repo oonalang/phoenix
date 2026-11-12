@@ -12,10 +12,11 @@ define(function (require, exports, module) {
         if (!data || !/^[1-9]\d*$/.test(String(data.tagId))) {
             throw new Error("The element has no editable HTML source.");
         }
-        const width = Number(data.width);
-        const height = Number(data.height);
-        if (!Number.isFinite(width) || !Number.isFinite(height) ||
-                width < 1 || height < 1 || width > 100000 || height > 100000) {
+        const width = data.width === null || data.width === undefined ? null : Number(data.width);
+        const height = data.height === null || data.height === undefined ? null : Number(data.height);
+        if ((width === null && height === null) ||
+                (width !== null && (!Number.isFinite(width) || width < 1 || width > 100000)) ||
+                (height !== null && (!Number.isFinite(height) || height < 1 || height > 100000))) {
             throw new Error("Invalid element dimensions.");
         }
         const liveDocument = LivePreview.getCurrentLiveDoc();

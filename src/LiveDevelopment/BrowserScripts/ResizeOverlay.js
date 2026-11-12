@@ -136,10 +136,14 @@
                 w = h * aspect;
             }
         }
-        drag.width = fit(fit(w, 16) / drag.scaleX - drag.extraWidth, 1);
-        drag.height = fit(fit(h, 16) / drag.scaleY - drag.extraHeight, 1);
-        drag.element.style.width = drag.width + "px";
-        drag.element.style.height = drag.height + "px";
+        if (drag.direction.includes("e") || drag.direction.includes("w")) {
+            drag.width = fit(fit(w, 16) / drag.scaleX - drag.extraWidth, 1);
+            drag.element.style.width = drag.width + "px";
+        }
+        if (drag.direction.includes("n") || drag.direction.includes("s")) {
+            drag.height = fit(fit(h, 16) / drag.scaleY - drag.extraHeight, 1);
+            drag.element.style.height = drag.height + "px";
+        }
         drag.changed = true;
         queueRender();
     }
@@ -213,6 +217,8 @@
             extraHeight: extraHeight,
             beforeWidth: element.style.width,
             beforeHeight: element.style.height,
+            width: null,
+            height: null,
             changed: false
         };
         event.preventDefault();

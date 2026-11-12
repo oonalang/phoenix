@@ -32,22 +32,38 @@ define(function (require, exports, module) {
     }
 
     function resizeOpeningTag(openTag, width, height) {
-        if (!Number.isFinite(width) || !Number.isFinite(height) ||
-                width < 1 || height < 1 || width > 100000 || height > 100000 ||
+        const hasWidth = width !== null && width !== undefined;
+        const hasHeight = height !== null && height !== undefined;
+        if ((!hasWidth && !hasHeight) ||
+                (hasWidth && (!Number.isFinite(width) || width < 1 || width > 100000)) ||
+                (hasHeight && (!Number.isFinite(height) || height < 1 || height > 100000)) ||
                 openingTagEnd(openTag) !== openTag.length) {
             throw new Error("Invalid HTML resize request.");
         }
-        const w = Math.round(width * 100) / 100;
-        const h = Math.round(height * 100) / 100;
+        const w = hasWidth ? Math.round(width * 100) / 100 : null;
+        const h = hasHeight ? Math.round(height * 100) / 100 : null;
         const attribute = /(\sstyle\s*=\s*)(["'])([\s\S]*?)\2/i;
         if (attribute.test(openTag)) {
             return openTag.replace(attribute, function (_, prefix, quote, value) {
-                const result = rewriteStyle(rewriteStyle(value, "width", w), "height", h);
+                let result = value;
+                if (hasWidth) {
+                    result = rewriteStyle(result, "width", w);
+                }
+                if (hasHeight) {
+                    result = rewriteStyle(result, "height", h);
+                }
                 return prefix + quote + result.trim() + quote;
             });
         }
+        const styles = [];
+        if (hasWidth) {
+            styles.push("width: " + w + "px");
+        }
+        if (hasHeight) {
+            styles.push("height: " + h + "px");
+        }
         return openTag.replace(/\s*\/?>$/, function (end) {
-            return ' style="width: ' + w + 'px; height: ' + h + 'px"' +
+            return ' style="' + styles.join("; ") + '"' +
                 (/\/\s*>$/.test(end) ? "/>" : ">");
         });
     }
