@@ -3426,7 +3426,7 @@ define({
     "MIGRATE_INTERRUPTED_FINAL": "To copy the rest, choose {0}.",
     "MIGRATE_UNREACHABLE_TITLE": "Could not reach the old site",
     "MIGRATE_UNREACHABLE_MESSAGE": "{APP_NAME} could not connect to {0} to look for your projects and settings, so nothing has been changed. Check your internet connection, then try again with {1}.",
-    "CMD_MIGRATE_DATA": "Migrate My Data From {0}\u2026"
+    "CMD_MIGRATE_DATA": "Migrate My Data From {0}\u2026",
     "VSCODE_EXPLORER": "Explorer",
     "VSCODE_SEARCH": "Search",
     "VSCODE_SOURCE": "Source Control",
