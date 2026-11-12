@@ -3441,5 +3441,13 @@ define({
     "VSCODE_CANCEL": "Cancel",
     "VSCODE_SAVE": "Save",
     "VSCODE_AI_INVALID_URL": "Enter an HTTPS URL or localhost URL.",
-    "VSCODE_NAVIGATION": "Workbench navigation"
+    "VSCODE_NAVIGATION": "Workbench navigation",
+    "VISUAL_BUILDER_TITLE": "Visual Builder",
+    "VISUAL_BUILDER_OPEN": "Design current site",
+    "VISUAL_BUILDER_EXIT": "Return to code editor",
+    "VISUAL_BUILDER_NEEDS_PROJECT": "Open an existing project before using Visual Builder. No new project is needed.",
+    "VISUAL_BUILDER_NEEDS_HTML": "Open an HTML page from this project, or configure its development server in Live Preview Settings. Visual Builder did not find an index.html page.",
+    "VISUAL_BUILDER_UNAVAILABLE": "Design Mode is unavailable in the current workspace.",
+    "VISUAL_BUILDER_FAILED": "Could not open the current site.",
+    "VISUAL_BUILDER_HIGHLIGHT_ONLY": "Your existing project is open in Design Mode. Element selection and source-editing tools require Live Edit access. The current mode is read-only highlighting."
 });

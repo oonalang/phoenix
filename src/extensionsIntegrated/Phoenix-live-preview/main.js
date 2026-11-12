@@ -78,6 +78,7 @@ define(function (require, exports, module) {
         utils = require('./utils');
 
     require("./ResizeHandles");
+    require("./VisualBuilderToolbar");
 
     const KernalModeTrust = window.KernalModeTrust;
     if(!KernalModeTrust){
