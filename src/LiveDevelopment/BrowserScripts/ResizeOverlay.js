@@ -254,6 +254,14 @@
         notice.className = "notice hidden";
         root.appendChild(notice);
         document.body.appendChild(host);
+        ["click", "dblclick", "contextmenu"].forEach(function (type) {
+            window.addEventListener(type, function (event) {
+                if (event.composedPath && event.composedPath().includes(host)) {
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+                }
+            }, true);
+        });
         if (typeof ResizeObserver !== "undefined") {
             resizeObserver = new ResizeObserver(queueRender);
         }
