@@ -3427,4 +3427,19 @@ define({
     "MIGRATE_UNREACHABLE_TITLE": "Could not reach the old site",
     "MIGRATE_UNREACHABLE_MESSAGE": "{APP_NAME} could not connect to {0} to look for your projects and settings, so nothing has been changed. Check your internet connection, then try again with {1}.",
     "CMD_MIGRATE_DATA": "Migrate My Data From {0}\u2026"
+    "VSCODE_EXPLORER": "Explorer",
+    "VSCODE_SEARCH": "Search",
+    "VSCODE_SOURCE": "Source Control",
+    "VSCODE_EXTENSIONS": "Extensions",
+    "VSCODE_TERMINAL": "Terminal",
+    "VSCODE_AI_SETTINGS": "Inline AI completion",
+    "VSCODE_AI_DESCRIPTION": "Connect an HTTPS completion gateway. No code is sent unless suggestions are enabled.",
+    "VSCODE_AI_ENABLE": "Enable inline suggestions",
+    "VSCODE_AI_GATEWAY": "Completion gateway URL",
+    "VSCODE_AI_MODEL": "Model identifier",
+    "VSCODE_AI_DELAY": "Suggestion delay (milliseconds)",
+    "VSCODE_CANCEL": "Cancel",
+    "VSCODE_SAVE": "Save",
+    "VSCODE_AI_INVALID_URL": "Enter an HTTPS URL or localhost URL.",
+    "VSCODE_NAVIGATION": "Workbench navigation"
 });

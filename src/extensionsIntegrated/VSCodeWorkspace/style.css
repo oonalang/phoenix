@@ -1,0 +1,162 @@
+body.vscode-workbench {
+    --vscode-bg: #1e1e1e;
+    --vscode-sidebar: #252526;
+    --vscode-border: #383838;
+    --vscode-accent: #007acc;
+}
+.vscode-workbench .main-view,
+.vscode-workbench .content,
+.vscode-workbench #editor-holder {
+    background: var(--vscode-bg);
+}
+.vscode-workbench #sidebar {
+    padding-left: 48px;
+    box-sizing: border-box;
+    background: var(--vscode-sidebar);
+    border-right: 1px solid var(--vscode-border);
+}
+.vscode-workbench #mainNavBar,
+.vscode-workbench #project-files-header,
+.vscode-workbench #project-files-container,
+.vscode-workbench #working-set-list-container {
+    min-width: 0;
+}
+.vscode-workbench #mainNavBar {
+    border-bottom: 1px solid var(--vscode-border);
+}
+.vscode-workbench .vscode-activity-bar {
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 48px;
+    display: flex;
+    flex-direction: column;
+    background: #181818;
+    border-right: 1px solid var(--vscode-border);
+}
+.vscode-workbench .vscode-activity-button {
+    width: 48px;
+    height: 48px;
+    border: 0;
+    border-left: 2px solid transparent;
+    background: transparent;
+    color: #9d9d9d;
+    font-size: 19px;
+    cursor: pointer;
+}
+.vscode-workbench .vscode-activity-button:hover,
+.vscode-workbench .vscode-activity-button:focus-visible {
+    background: #2d2d30;
+    color: #fff;
+}
+.vscode-workbench .vscode-activity-button.active {
+    border-left-color: var(--vscode-accent);
+    color: #fff;
+}
+.vscode-workbench .vscode-activity-spacer {
+    flex: 1;
+}
+.vscode-workbench #centralControlBar {
+    background: #202023;
+    border-right: 1px solid var(--vscode-border);
+}
+.vscode-workbench .tab-bar-container,
+.vscode-workbench .phoenix-tab-bar {
+    background: #252526;
+}
+.vscode-workbench .phoenix-tab-bar .tab {
+    border-radius: 0;
+    border-right: 1px solid var(--vscode-border);
+}
+.vscode-workbench .phoenix-tab-bar .tab.active {
+    background: #1e1e1e;
+}
+.vscode-workbench #status-bar {
+    background: var(--vscode-accent);
+    border-top: 0;
+    color: white;
+}
+.vscode-inline-ghost {
+    white-space: pre;
+    pointer-events: none;
+    color: #7f858d;
+    opacity: 0.8;
+}
+.vscode-settings-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.65);
+}
+.vscode-settings-card {
+    width: min(440px, calc(100vw - 32px));
+    padding: 24px;
+    box-sizing: border-box;
+    color: #efefef;
+    background: #252526;
+    border: 1px solid #454545;
+    border-radius: 6px;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+}
+.vscode-settings-card h2 {
+    margin: 0 0 8px;
+    color: #f0f0f0;
+    font-size: 20px;
+}
+.vscode-settings-card p {
+    margin: 0 0 18px;
+    color: #bcbcbc;
+    line-height: 1.5;
+}
+.vscode-settings-form,
+.vscode-settings-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.vscode-settings-form {
+    gap: 16px;
+}
+.vscode-settings-field input:not([type="checkbox"]) {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 9px 10px;
+    border: 1px solid #555;
+    border-radius: 3px;
+    color: #f1f1f1;
+    background: #1e1e1e;
+}
+.vscode-settings-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+.vscode-settings-buttons button {
+    padding: 9px 15px;
+    border: 1px solid #5a5a5a;
+    color: white;
+    background: #353535;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.vscode-settings-buttons .vscode-primary-button {
+    border-color: #007acc;
+    background: #007acc;
+}
+@media (max-width: 620px) {
+    .vscode-workbench #sidebar {
+        padding-left: 40px;
+    }
+    .vscode-workbench .vscode-activity-bar,
+    .vscode-workbench .vscode-activity-button {
+        width: 40px;
+    }
+    .vscode-workbench .vscode-activity-button {
+        height: 42px;
+    }
+}

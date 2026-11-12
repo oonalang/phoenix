@@ -48,5 +48,6 @@ define(function (require, exports, module) {
     require("./Terminal/main");
     require("./JSONSupport/main");
     require("./MigrateAssist/main");
+    require("./VSCodeWorkspace/main");
     require("./pro-loader");
 });
