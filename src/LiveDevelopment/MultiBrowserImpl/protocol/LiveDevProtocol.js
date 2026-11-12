@@ -47,6 +47,7 @@ define(function (require, exports, module) {
         DocumentObserver      = require("text!LiveDevelopment/BrowserScripts/DocumentObserver.js"),
         LanguageManager     = require("language/LanguageManager"),
         RemoteFunctions       = require("text!LiveDevelopment/BrowserScripts/RemoteFunctions.js"),
+        ResizeOverlayScript   = require("text!LiveDevelopment/BrowserScripts/ResizeOverlay.js"),
         EditorManager         = require("editor/EditorManager"),
         LiveDevMultiBrowser   = require("LiveDevelopment/LiveDevMultiBrowser"),
         PreferencesManager  = require("preferences/PreferencesManager"),
@@ -536,6 +537,7 @@ define(function (require, exports, module) {
             script += "\nwindow._LD=(" + RemoteFunctions +
                 "(" + JSON.stringify(LiveDevMultiBrowser.getConfig()) + "))";
         }
+        script += "\n" + ResizeOverlayScript;
         return "\n" + script + "\n";
     }
 

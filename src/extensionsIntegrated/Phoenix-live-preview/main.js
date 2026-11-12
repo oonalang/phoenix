@@ -77,6 +77,8 @@ define(function (require, exports, module) {
         DefaultDialogs = require("widgets/DefaultDialogs"),
         utils = require('./utils');
 
+    require("./ResizeHandles");
+
     const KernalModeTrust = window.KernalModeTrust;
     if(!KernalModeTrust){
         throw new Error("KernalModeTrust is not defined. Cannot boot without trust ring");
